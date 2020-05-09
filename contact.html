@@ -1,0 +1,130 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #000000;
+    background-color: #f1f1f1;
+}
+
+div#clicked a {
+    color: #000000;
+    background-color: #f1f1f1;
+}
+
+div#heading {
+    color: #f1f1f1;
+    background-color: #111;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="index.html">Home</a>
+  <a href="HistoricalPlaces.html">Historical Places</a>
+  <a href="TheNoblestPeople.html">The Noblest People</a>
+  <a href="educationalCenter.html">Educational Centers</a>
+  <a href="demography.html">Demography</a>
+  <a href="climate.html">Climate</a>
+  <a href="agriculture.html">Agriculture</a>
+  <a href="malls.html">Malls</a>
+  <a href="resturants.html">Resturants</a>
+  <div id="clicked">
+  <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<div class="main">
+<div id="heading">Contact us </div>
+
+<MARQUEE><P>IF WANT TO GET MORE INFORMATION ABOT SOMETHING ,PLEASE SEND AN G-MAIL TO<HR>
+<b>AKSHATPURNEA@GMAIL.COM</p></B></MARQUEE><BR><BR>
+
+<P> YOU CAN COMMENT YOUR IDEAS IF YOU WISH </P><BR>
+
+
+
+<div class="comment">
+<textarea id="title" type="text "rows="10" cols="50" onkeyup="Allow()" placeholder="write a comment......"></textarea>
+<input type="submit" value="Post" onclick="insert()" style="width:50px;" /></form>
+</div>
+<div id="display"></div>
+<script type="text/javascript">
+var titles = [];
+var titleInput = document.getElementById("title");
+var messageBox = document.getElementById("display");
+function Allow()
+{
+if (!user.title.value.match(/[a-zA-Z]$/) && user.title.value !="")
+{
+user.title.value="";
+alert("Please Enter only alphabets");
+}
+window.location.reload()
+}
+function insert () {
+titles.push(titleInput.value);
+clearAndShow();
+}
+function clearAndShow ()
+{
+titleInput.value = "";
+messageBox.innerHTML = "";
+messageBox.innerHTML += " " + titles.join("<br/> ") + "<br/>";
+}
+</script>
+
+
+
+
+<!--write your comment here -->
+
+
+
+
+</div>
+     
+</body>
+</html> 
